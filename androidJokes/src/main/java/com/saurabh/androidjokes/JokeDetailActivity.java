@@ -20,7 +20,7 @@ public class JokeDetailActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(joke)) {
             txtJoke.setText(joke);
         } else {
-            Toast.makeText(this, "Error loading the joke!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.error_loading_joke, Toast.LENGTH_LONG).show();
         }
     }
 }

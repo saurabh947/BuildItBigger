@@ -1,16 +1,17 @@
 package com.udacity.gradle.builditbigger;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.saurabh.androidjokes.JokeDetailActivity;
-import com.saurabh.libraries.Jokes;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity implements JokesTask.JokeCallback {
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +40,17 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view) {
-        Jokes jokes = new Jokes();
+        mProgressDialog = ProgressDialog.show(this, getString(R.string.loading_header),
+                getString(R.string.loading_message), true);
+        JokesTask jokesTask = new JokesTask(this);
+        jokesTask.execute();
+    }
+
+    @Override
+    public void onJokeRetrieved(String joke) {
+        mProgressDialog.dismiss();
         Intent intent = new Intent(this, JokeDetailActivity.class);
-        intent.putExtra("joke", jokes.getJoke());
+        intent.putExtra("joke", joke);
         startActivity(intent);
     }
 }

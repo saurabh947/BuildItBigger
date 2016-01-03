@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidJokes</string>
+    <string name="error_loading_joke">Error Loading the joke!</string>
 </resources>

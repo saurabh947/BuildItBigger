@@ -34,4 +34,7 @@ dependencies {
 
     // Local Android Library
     compile project(':androidJokes')
+
+    // JUnit Testing
+    testCompile 'junit:junit:4.12'
 }

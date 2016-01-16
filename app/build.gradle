@@ -47,3 +47,7 @@ dependencies {
     // JUnit Testing
     testCompile 'junit:junit:4.12'
 }
+
+//task runTestCase {
+//    tasks.getByName(":assembleFreeDebugAndroidTest").actions.execute()
+//}

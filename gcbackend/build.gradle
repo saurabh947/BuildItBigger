@@ -39,3 +39,11 @@ appengine {
         getDiscoveryDocsOnBuild = true
     }
 }
+
+//task startBackend {
+//    tasks.getByName("appengineStart").actions.execute()
+//}
+//
+//task stopBackend {
+//    tasks.getByName("appengineStop").actions.execute()
+//}

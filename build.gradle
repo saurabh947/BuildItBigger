@@ -17,3 +17,7 @@ allprojects {
         jcenter()
     }
 }
+
+//task custom(dependsOn: ':gcbackend:startBackend', doLast: ':gcbackend:stopBackend') {
+//    tasks.getByPath(':app:runTestCase').actions.execute()
+//}
